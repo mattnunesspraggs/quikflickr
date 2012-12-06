@@ -155,7 +155,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         NSURL *urlToPage = [NSURL URLWithString:_photo.link];
         [[UIApplication sharedApplication] openURL:urlToPage];
     }
