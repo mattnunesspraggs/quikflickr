@@ -60,7 +60,20 @@
         if ([value isKindOfClass:[NSDictionary class]]) {
             self.media = [FlickrPhotoItemMedia instanceFromDictionary:value];
         }
-
+    } else if ([key isEqualToString:@"author"] ) {
+        NSMutableString *mAuthor = [NSMutableString stringWithString:value];
+        
+        [mAuthor replaceOccurrencesOfString:@"nobody@flickr.com (" withString:@"" options:NSBackwardsSearch range:NSMakeRange(0, [mAuthor length])];
+        [mAuthor replaceCharactersInRange:NSMakeRange([mAuthor length] - 1, 1) withString:@""];
+        
+        self.author = mAuthor;
+    } else if ([key isEqualToString:@"title"] ) {
+        if ([value length]) {
+            self.title = value;
+        }
+        else {
+            self.title = NSLocalizedString(@"(No Title)", @"(No Title)");
+        }
     } else {
         [super setValue:value forKey:key];
     }

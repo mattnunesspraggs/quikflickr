@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Reachability;
 @interface QFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Reachability *currentReachability;
 
 @end

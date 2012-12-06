@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 
-@class QFModalActivityIndicator;
+@class QFModalActivityIndicator, QFOperationQueue;
 @interface QFViewController : UIViewController
 
+- (void)reachabilityChanged;
+
+@property (strong, nonatomic) Reachability *currentReachability;
+@property (assign, nonatomic) NetworkStatus currentNetworkStatus;
+
 @property (strong, nonatomic) QFModalActivityIndicator *activityIndicator;
+@property (strong, nonatomic) NSOperationQueue *operationQueue;
 
 @end

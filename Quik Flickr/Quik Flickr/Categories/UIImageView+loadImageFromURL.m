@@ -7,6 +7,7 @@
 //
 
 #import "UIImageView+loadImageFromURL.h"
+#import "QFOperationQueue.h"
 #import "QFImageLoadOperation.h"
 #import "FlickrPhoto.h"
 
@@ -14,21 +15,29 @@
 
 - (void)loadImageFromFlickrPhoto:(FlickrPhoto *)photo
 {
+    [self loadImageFromFlickrPhoto:photo usingQueue:[QFOperationQueue shared]];
+}
+
+- (void)loadImageFromFlickrPhoto:(FlickrPhoto *)photo
+                      usingQueue:(NSOperationQueue *)queue
+{
     if (photo.image) {
         [self setImage:photo.image];
+        [self fadeIn];
     }
     else {
         self.image = [UIImage imageNamed:@"questionmark"];
     
         QFImageLoadOperation *imageLoad = [[QFImageLoadOperation alloc] initWithDelegate:self andSelector:@selector(imageLoaded:)];
         imageLoad.inputPhoto = photo;
-        [imageLoad run];
+        [imageLoad runInQueue:queue];
     }
 }
 
 - (void)loadImageFromURL:(NSURL *)url
 {
     self.image = [UIImage imageNamed:@"questionmark"];
+    [self fadeIn];
     
     QFImageLoadOperation *imageLoad = [[QFImageLoadOperation alloc] initWithDelegate:self andSelector:@selector(imageLoaded:)];
     imageLoad.inputURL = url;
@@ -37,16 +46,25 @@
 
 - (void)imageLoaded:(QFImageLoadOperation *)op
 {
-    [UIView animateWithDuration:0.2f animations:^{
-        self.alpha = 0;
-    } completion:^(BOOL finished) {
-        if (op.outputImage) {
-            self.image = op.outputImage;
-        }
-
-        [UIView animateWithDuration:0.4f animations:^{
-            self.alpha = 1;
+    if (op.successful && op.outputImage) {
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            self.alpha = 0;
+        } completion:^(BOOL finished) {
+            if (op.outputImage) {
+                self.image = op.outputImage;
+            }
+            
+            [self fadeIn];
         }];
+        
+    }
+}
+
+- (void)fadeIn
+{
+    [UIView animateWithDuration:0.4f animations:^{
+        self.alpha = 1;
     }];
 }
 

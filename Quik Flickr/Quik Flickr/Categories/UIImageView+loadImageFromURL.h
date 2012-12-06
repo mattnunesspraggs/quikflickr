@@ -12,8 +12,12 @@
 @interface UIImageView (loadImageFromURL)
 
 - (void)loadImageFromFlickrPhoto:(FlickrPhoto *)photo;
+- (void)loadImageFromFlickrPhoto:(FlickrPhoto *)photo
+                      usingQueue:(NSOperationQueue *)queue;
 
 - (void)loadImageFromURL:(NSURL *)url;
 - (void)imageLoaded:(QFImageLoadOperation *)op;
+
+- (void)fadeIn;
 
 @end

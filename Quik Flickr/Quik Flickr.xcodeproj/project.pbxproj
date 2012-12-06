@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3447CFC61670235100796C39 /* QFPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CFC41670235100796C39 /* QFPhotoViewController.m */; };
+		3447CFC71670235100796C39 /* QFPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3447CFC51670235100796C39 /* QFPhotoViewController.xib */; };
+		3447CFCB167037AC00796C39 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CFCA167037AC00796C39 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3447CFCD167039F800796C39 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3447CFCC167039F800796C39 /* SystemConfiguration.framework */; };
+		3447CFCF167044D000796C39 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3447CFCE167044D000796C39 /* icon.png */; };
+		3447CFD1167044D200796C39 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3447CFD0167044D200796C39 /* icon@2x.png */; };
+		3447CFD61670502C00796C39 /* QFPhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CFD41670502C00796C39 /* QFPhotoInfoViewController.m */; };
+		3447CFD71670502C00796C39 /* QFPhotoInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3447CFD51670502C00796C39 /* QFPhotoInfoViewController.xib */; };
 		347152BC166EE765000F9B01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347152BB166EE765000F9B01 /* UIKit.framework */; };
 		347152BE166EE765000F9B01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347152BD166EE765000F9B01 /* Foundation.framework */; };
 		347152C0166EE765000F9B01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347152BF166EE765000F9B01 /* CoreGraphics.framework */; };
@@ -62,6 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3447CFC31670235100796C39 /* QFPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QFPhotoViewController.h; path = "Classes/Photo View/QFPhotoViewController.h"; sourceTree = "<group>"; };
+		3447CFC41670235100796C39 /* QFPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QFPhotoViewController.m; path = "Classes/Photo View/QFPhotoViewController.m"; sourceTree = "<group>"; };
+		3447CFC51670235100796C39 /* QFPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QFPhotoViewController.xib; path = "Classes/Photo View/QFPhotoViewController.xib"; sourceTree = "<group>"; };
+		3447CFC9167037AC00796C39 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability/Reachability.h; sourceTree = "<group>"; };
+		3447CFCA167037AC00796C39 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability/Reachability.m; sourceTree = "<group>"; };
+		3447CFCC167039F800796C39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3447CFCE167044D000796C39 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		3447CFD0167044D200796C39 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		3447CFD31670502C00796C39 /* QFPhotoInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QFPhotoInfoViewController.h; path = "Classes/Photo Info View/QFPhotoInfoViewController.h"; sourceTree = "<group>"; };
+		3447CFD41670502C00796C39 /* QFPhotoInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QFPhotoInfoViewController.m; path = "Classes/Photo Info View/QFPhotoInfoViewController.m"; sourceTree = "<group>"; };
+		3447CFD51670502C00796C39 /* QFPhotoInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QFPhotoInfoViewController.xib; path = "Classes/Photo Info View/QFPhotoInfoViewController.xib"; sourceTree = "<group>"; };
 		347152B7166EE765000F9B01 /* Quik Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quik Flickr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		347152BB166EE765000F9B01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		347152BD166EE765000F9B01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3447CFCD167039F800796C39 /* SystemConfiguration.framework in Frameworks */,
 				347152BC166EE765000F9B01 /* UIKit.framework in Frameworks */,
 				347152BE166EE765000F9B01 /* Foundation.framework in Frameworks */,
 				347152C0166EE765000F9B01 /* CoreGraphics.framework in Frameworks */,
@@ -160,9 +180,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3447CFB9167022BA00796C39 /* Photo View */ = {
+			isa = PBXGroup;
+			children = (
+				3447CFC31670235100796C39 /* QFPhotoViewController.h */,
+				3447CFC41670235100796C39 /* QFPhotoViewController.m */,
+				3447CFC51670235100796C39 /* QFPhotoViewController.xib */,
+			);
+			name = "Photo View";
+			sourceTree = "<group>";
+		};
+		3447CFC81670378C00796C39 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				3447CFC9167037AC00796C39 /* Reachability.h */,
+				3447CFCA167037AC00796C39 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		3447CFD21670500100796C39 /* Photo Info View */ = {
+			isa = PBXGroup;
+			children = (
+				3447CFD31670502C00796C39 /* QFPhotoInfoViewController.h */,
+				3447CFD41670502C00796C39 /* QFPhotoInfoViewController.m */,
+				3447CFD51670502C00796C39 /* QFPhotoInfoViewController.xib */,
+			);
+			name = "Photo Info View";
+			sourceTree = "<group>";
+		};
 		347152AC166EE765000F9B01 = {
 			isa = PBXGroup;
 			children = (
+				3447CFD0167044D200796C39 /* icon@2x.png */,
+				3447CFCE167044D000796C39 /* icon.png */,
+				3447CFCC167039F800796C39 /* SystemConfiguration.framework */,
 				347152C1166EE765000F9B01 /* Quik Flickr */,
 				347152DF166EE765000F9B01 /* Quik FlickrTests */,
 				347152BA166EE765000F9B01 /* Frameworks */,
@@ -239,10 +291,13 @@
 		347152F0166EE7BF000F9B01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3447CFC81670378C00796C39 /* Reachability */,
 				34891937166F01CC008E5A9D /* Categories */,
 				34715332166EF596000F9B01 /* Models */,
 				347152F7166EE8FE000F9B01 /* Base */,
 				347152F1166EE7C6000F9B01 /* Main View */,
+				3447CFB9167022BA00796C39 /* Photo View */,
+				3447CFD21670500100796C39 /* Photo Info View */,
 				347152F8166EE90C000F9B01 /* Modal Activity Indicator */,
 				34715304166EEE48000F9B01 /* Operations */,
 			);
@@ -446,6 +501,10 @@
 				347152FA166EE931000F9B01 /* ModalActivityIndicator.xib in Resources */,
 				34891932166F0130008E5A9D /* questionmark.png in Resources */,
 				34891933166F0130008E5A9D /* questionmark@2x.png in Resources */,
+				3447CFC71670235100796C39 /* QFPhotoViewController.xib in Resources */,
+				3447CFCF167044D000796C39 /* icon.png in Resources */,
+				3447CFD1167044D200796C39 /* icon@2x.png in Resources */,
+				3447CFD71670502C00796C39 /* QFPhotoInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +565,9 @@
 				3489193A166F0251008E5A9D /* UIImageView+loadImageFromURL.m in Sources */,
 				3489193D166F0303008E5A9D /* QFImageLoadOperation.m in Sources */,
 				34891943166F0C5B008E5A9D /* QFMainViewCell.m in Sources */,
+				3447CFC61670235100796C39 /* QFPhotoViewController.m in Sources */,
+				3447CFCB167037AC00796C39 /* Reachability.m in Sources */,
+				3447CFD61670502C00796C39 /* QFPhotoInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

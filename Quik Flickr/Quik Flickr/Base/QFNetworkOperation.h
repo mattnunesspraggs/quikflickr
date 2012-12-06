@@ -14,6 +14,7 @@
 - (void)notifyDelegateOfTermination;
 
 - (void)run;
+- (void)runInQueue:(NSOperationQueue *)queue;
 
 @property (assign, nonatomic, getter = wasSuccessful) BOOL successful;
 

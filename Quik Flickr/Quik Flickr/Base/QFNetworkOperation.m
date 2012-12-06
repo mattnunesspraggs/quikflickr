@@ -30,7 +30,7 @@
 
 - (void)notifyDelegateOfTermination
 {
-    if ([_delegate respondsToSelector:_selector]) {
+    if (!self.isCancelled && [_delegate respondsToSelector:_selector]) {
         /*
          this throws a warning - that performSelector can cause a leak. This
          is because ARC cannot enforce proper memory management without knowing
@@ -51,7 +51,12 @@
 
 - (void)run
 {
-    [[QFOperationQueue shared] addOperation:self];
+    [self runInQueue:[QFOperationQueue shared]];
+}
+
+- (void)runInQueue:(NSOperationQueue *)queue
+{
+    [queue addOperation:self];
 }
 
 @end

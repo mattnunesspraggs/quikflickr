@@ -8,11 +8,23 @@
 
 #import "QFAppDelegate.h"
 #import "QFMainViewController.h"
+#import "Reachability.h"
+
+@interface QFAppDelegate ()
+
+- (void)reachabilityChanged:(NSNotification *)notification;
+
+@end
 
 @implementation QFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+
+    self.currentReachability = [Reachability reachabilityForInternetConnection];
+    [_currentReachability startNotifier];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     _window.backgroundColor = [UIColor whiteColor];
@@ -50,6 +62,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)reachabilityChanged:(NSNotification *)notification
+{
+    self.currentReachability = [notification object];
 }
 
 @end
