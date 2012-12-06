@@ -70,12 +70,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *title = @"";
+    switch (section) {
+        case 1:
+            title = NSLocalizedString(@"Title", @"Title");
+            break;
+        case 2:
+            title = NSLocalizedString(@"Author", @"Author");
+            break;
+        case 3:
+            title = NSLocalizedString(@"Date Published", @"Date Published");
+            break;
+        case 4:
+            title = NSLocalizedString(@"Tags", @"Tags");
+            break;
+        case 0:
+            title = nil;
+        default:
+            break;
+    }
+    
+    return title;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,25 +109,21 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *title = @"";
     NSString *value = @"";
-    switch (indexPath.row) {
-        case 0:
-            title = NSLocalizedString(@"Title", @"Title");
+    switch (indexPath.section) {
+        case 1:
             value = _photo.title;
             break;
-        case 1:
-            title = NSLocalizedString(@"Author", @"Author");
+        case 2:
             value = _photo.author;
             break;
-        case 2:
+        case 3:
         {
-            title = NSLocalizedString(@"Date Published", @"Date Published");
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
             NSDate *date = [dateFormatter dateFromString:_photo.published];
@@ -111,8 +132,7 @@
             value = formattedDate;
             break;
         }
-        case 3:
-            title = NSLocalizedString(@"Tags", @"Tags");
+        case 4:
             if (![_photo.tags length]) {
                 value = @" ";
             }
@@ -120,8 +140,7 @@
                 value = _photo.tags;
             }
             break;
-        case 4:
-            title = @"";
+        case 0:
             value = NSLocalizedString(@"View In Browser", @"View In Browser");
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -130,14 +149,13 @@
     }
     
     cell.textLabel.text = value;
-    cell.detailTextLabel.text = title;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 4) {
+    if (indexPath.row == 0) {
         NSURL *urlToPage = [NSURL URLWithString:_photo.link];
         [[UIApplication sharedApplication] openURL:urlToPage];
     }
